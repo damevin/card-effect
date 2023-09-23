@@ -1,0 +1,133 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100vh; 
+  margin: 0;
+}
+
+html {
+  color-scheme: dark;
+  background: black;
+  font-family: system-ui;
+  margin:0;
+  padding: 0;
+  height:100%;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 1.625rem;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-block-end: 0.125em;
+}
+
+p {
+  font-size: 0.875rem;
+  opacity: 0.6;
+  max-width: 55ch;
+  margin: 0;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: black;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 380px);
+  grid-auto-rows: 260px;
+  position: relative;
+}
+
+.card {
+  position: relative;
+  background: black;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.card > svg {
+  height: 30%;
+  width: 55px;
+}
+
+.card:hover {
+  background-attachment: fixed;
+  background-image: radial-gradient(
+    circle at var(--x, 0) var(--y, 0),
+    hsla(0, 0%, 74%, 0.175),
+    hsl(0 0% 100% / 0.0125) 10rem
+  );
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-attachment: fixed;
+  border-radius: 8px;
+  background-image: radial-gradient(
+    circle at var(--x, 0) var(--y, 0),
+    hsla(0, 0%, 100%, 0.75),
+    transparent 5rem
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.grid-container {
+  margin-block-start: 3rem;
+  display: grid;
+  grid-template-areas: "a";
+}
+
+.grid-container > * {
+  grid-area: a;
+}
+
+.no-gradient::after {
+  background-image: none !important;
+}
+
+
+@keyframes slideFadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(1rem); 
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
